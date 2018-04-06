@@ -64,4 +64,15 @@ contract Voting {
         return numOfVotes;
     }
 
+    // returns state variable with is increased in the addCandidate function
+    function getNumOfCandidates() public view returns(uint) {
+        return numCandidates;
+    }
+
+    // returns state variable with is increased in the vote function
+    function getNumOfVoters() public view returns(uint) {
+        return numVoters;
+    }
+
+
 }
