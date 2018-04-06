@@ -47,4 +47,21 @@ contract Voting {
         voters[voterID] = Voter(uid, candidateID);
       }
     }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * *
+     * Getter Functions, marked by the keyword 'view'  *
+     * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    // find total votes for a specific candidate by looping through voters
+    function totalVotes(uint candidateID) view public returns (uint) {
+        uint numOfVotes = 0;
+        for (uint i = 0; i < numVotes; i++) {
+          // if the voter votes for this candidate, increment totalVotes
+            if (voters[i].candidateIDVote == candidateID) {
+                numOfVotes++;
+            }
+        }
+        return numOfVotes;
+    }
+
 }
