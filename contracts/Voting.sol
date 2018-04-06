@@ -74,5 +74,10 @@ contract Voting {
         return numVoters;
     }
 
+    // returns candidate information, including ID, name & party
+    function getCandidate(uint candidateID) public view returns (uint,bytes32,bytes32) {
+        return (candidateID, candidates[candidateID].name, candidates[candidateID].party);
+    }
+
 
 }
