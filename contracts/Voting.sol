@@ -38,19 +38,4 @@ contract Voting {
       candidates[candidateID] = Candidate(name,party,true);
       AddedCandidate(candidateID);
     }
-
-    function vote(bytes32 uid, uint candidateID) public {
-      // checks if the struct exists for candidate
-      if (candidates[candidateID].doesExist == true) {
-        // voterID is the return variable
-        uint voterID = numVoters++;
-        voters[voterID] = Voter(uid, candidateID);
-      }
-    }
-
-
-
-
-
-
 }
